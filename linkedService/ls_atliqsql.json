@@ -1,0 +1,24 @@
+{
+	"name": "ls_atliqsql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "atliq-sql-1708.database.windows.net",
+			"database": "atliq_commerce",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "rv_mansi",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "AzureSqlDbPswd"
+			}
+		}
+	}
+}

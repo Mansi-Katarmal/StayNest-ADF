@@ -1,0 +1,36 @@
+{
+	"name": "DS_ADLS_Bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_saatliqcapstone",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			},
+			"ingest_date": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().ingest_date",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().table_name",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

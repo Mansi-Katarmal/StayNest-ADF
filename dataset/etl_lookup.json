@@ -1,0 +1,39 @@
+{
+	"name": "etl_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_atliqsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "table_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "source_schema",
+				"type": "nvarchar"
+			},
+			{
+				"name": "load_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "watermark_column",
+				"type": "nvarchar"
+			},
+			{
+				"name": "last_loaded_at",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "etl",
+			"table": "control_table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

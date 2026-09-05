@@ -1,0 +1,15 @@
+{
+	"name": "adf-atliq-capstone",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "eeb80a5c-d787-450e-8e98-e5d3401d1d01",
+		"tenantId": "a045f6d0-0c83-4c4f-a236-ce6c34b49379"
+	}
+}

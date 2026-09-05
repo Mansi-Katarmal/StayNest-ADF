@@ -1,0 +1,58 @@
+{
+	"name": "DS_SQL_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_atliqsql",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"source_schema": {
+				"type": "string"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "customer_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "signup_date",
+				"type": "date"
+			},
+			{
+				"name": "updated_at",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().source_schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
