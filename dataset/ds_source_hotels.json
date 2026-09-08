@@ -1,0 +1,45 @@
+{
+	"name": "ds_source_hotels",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Gen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "hotels.csv",
+				"folderPath": "raw",
+				"fileSystem": "staynest"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "hotel_id",
+				"type": "String"
+			},
+			{
+				"name": "hotel_name",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "category",
+				"type": "String"
+			},
+			{
+				"name": "star_rating",
+				"type": "String"
+			}
+		]
+	}
+}
